@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusLoop | Student Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a class="brand" href="#">Campus<span>Loop</span></a>
+        <nav>
+            <a href="#marketplace">Marketplace</a>
+            <a href="#sell">Sell an item</a>
+        </nav>
+        <div class="nav-actions">
+            <span id="user-status">Guest</span>
+            <button id="logout-btn" class="secondary hidden">Logout</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <p class="eyebrow">THE STUDENT MARKETPLACE</p>
+            <h1>Good finds.<br><span>Better campus life.</span></h1>
+            <p>Buy and sell textbooks, electronics and college essentials with students.</p>
+            <a class="primary link-button" href="#marketplace">Explore listings</a>
+        </section>
+
+        <section class="auth-section" id="account">
+            <div class="section-heading">
+                <p class="eyebrow">YOUR ACCOUNT</p>
+                <h2>Join CampusLoop</h2>
+            </div>
+
+            <div class="auth-grid">
+                <form id="register-form" class="panel">
+                    <h3>Create account</h3>
+                    <label>Full name
+                        <input name="fullName" required maxlength="100">
+                    </label>
+                    <label>Email
+                        <input name="email" type="email" required maxlength="150">
+                    </label>
+                    <label>Password
+                        <input name="password" type="password"
+                               minlength="8" maxlength="72" required>
+                    </label>
+                    <label>College
+                        <input name="collegeName" required maxlength="100">
+                    </label>
+                    <button class="primary" type="submit">Register</button>
+                </form>
+
+                <form id="login-form" class="panel">
+                    <h3>Welcome back</h3>
+                    <label>Email
+                        <input name="email" type="email" required>
+                    </label>
+                    <label>Password
+                        <input name="password" type="password" required>
+                    </label>
+                    <button class="primary" type="submit">Login</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="marketplace">
+            <div class="section-heading">
+                <p class="eyebrow">FIND YOUR NEXT DEAL</p>
+                <h2>Explore listings</h2>
+                <p>Discover items from students in your city.</p>
+            </div>
+
+            <form id="search-form" class="search-bar">
+                <input name="keyword" placeholder="Search textbooks, calculators...">
+                <select name="category">
+                    <option value="">All categories</option>
+                    <option>Textbooks</option>
+                    <option>Calculators</option>
+                    <option>Electronics</option>
+                    <option>Lab Equipment</option>
+                    <option>College Essentials</option>
+                </select>
+                <input name="city" placeholder="City">
+                <button class="primary" type="submit">Search</button>
+            </form>
+
+            <p id="listing-message" role="status"></p>
+            <div id="listing-grid" class="listing-grid"></div>
+        </section>
+         
+<section id="chat">
+    <div class="section-heading">
+        <p class="eyebrow">STAY CONNECTED</p>
+        <h2>Your conversations</h2>
+        <p>Chat with students about items you're interested in.</p>
+    </div>
+
+    <div class="chat-layout">
+        <aside class="panel">
+            <h3>Conversations</h3>
+            <div id="conversation-list"></div>
+        </aside>
+
+        <div class="panel chat-panel">
+            <h3 id="chat-title">Select a conversation</h3>
+            <div id="chat-status" role="status">
+                Log in to start chatting.
+            </div>
+            <div id="chat-messages" aria-live="polite"></div>
+
+            <form id="chat-form">
+                <input
+                    name="content"
+                    placeholder="Write a message..."
+                    maxlength="2000"
+                    required>
+                <button class="primary" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+        <section id="sell">
+            <div class="section-heading">
+                <p class="eyebrow">GIVE YOUR ITEMS A SECOND LIFE</p>
+                <h2>Sell an item</h2>
+                <p>Log in to publish your listing.</p>
+            </div>
+
+            <form id="listing-form" class="panel sell-form">
+                <label>Item title
+                    <input name="title" required maxlength="120">
+                </label>
+                <label>Description
+                    <textarea name="description" maxlength="2000"></textarea>
+                </label>
+                <label>Category
+                    <select name="category" required>
+                        <option value="">Choose a category</option>
+                        <option>Textbooks</option>
+                        <option>Calculators</option>
+                        <option>Electronics</option>
+                        <option>Lab Equipment</option>
+                        <option>College Essentials</option>
+                    </select>
+                </label>
+                <label>Price (₹)
+                    <input name="price" type="number"
+                           min="0.01" step="0.01" required>
+                </label>
+                <label>Condition
+                    <select name="itemCondition" required>
+                        <option value="">Choose condition</option>
+                        <option>NEW</option>
+                        <option>LIKE_NEW</option>
+                        <option>GOOD</option>
+                        <option>FAIR</option>
+                    </select>
+                </label>
+                <label>City
+                    <input name="city" required maxlength="100">
+                </label>
+                <label>Pickup area (optional)
+                    <input name="pickupLocation" maxlength="200"
+                           placeholder="e.g. Near college library">
+                </label>
+                <button class="primary" type="submit">Publish listing</button>
+            </form>
+            
+        </section>
+    </main>
+
+    <footer>
+        <a class="brand" href="#">Campus<span>Loop</span></a>
+        <p>Made for students, powered by community.</p>
+    </footer>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.1.1/bundles/stomp.umd.min.js"></script>
+        <script src="app.js"></script>
+
+
+</body>
+</html>
