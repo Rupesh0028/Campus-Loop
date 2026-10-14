@@ -127,3 +127,9 @@ Deployment to a production hosting platform
 Additional search and filtering options
 Author
 Developed as a student software project to make exchanging academic essentials easier across colleges.
+
+<img width="1900" height="865" alt="image" src="https://github.com/user-attachments/assets/c0aae32e-95f9-4f6d-a015-e552e76cd341" />
+<img width="1919" height="891" alt="image" src="https://github.com/user-attachments/assets/3e06cd11-8f89-4e6b-9dc3-5f14651f12bb" />
+<img width="1919" height="896" alt="image" src="https://github.com/user-attachments/assets/ea5925fa-7a7c-47c8-974b-e54b27d51339" />
+
+
